@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <title>Exemplo de select com pesquisa</title>
+    <!--DECLARAÇÃO DO JQUERY-->
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+
+    <!--DECLARAÇÃO DO ANGULAR JS-->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+
+    <!--DECLARAÇÃO DO BOOTSTRAP-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <!--DECLARAÇÃO DO SELECT 2-->
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css" />
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
+
+    <!--DECLARAÇÃO DO ARQUIVO JS QUE ESTÁ A DIRETIVA-->
+    <script src="js/directive/opcoesDirective.js"></script>
+
+    <!--DECLARAÇÃO DO ARQUIVO JS QUE ESTÁ O CONTROLLER-->
+    <script src="js/controller/opcoesController.js"></script>
+
+</head>
+
+<body ng-controller="opcoesController">
+    <div class="col-md-6 col-md-offset-3">
+      <h3>Exemplo de select com pesquisa!</h3>
+
+      <!-- SELECT COM PESQUISA -->
+      <select class="form-control" select2="" data-ng-model="opcaoSelecionada" ng-options="c.idOpcao as c.nome for c in opcoes">
+        <option>Selecione uma opção</option>
+      </select>
+      
+      <br>
+      <br>
+      <label>Opção selecionada: {{opcaoSelecionada}}</label>
+   </div>
+</body>
+
+</html>
